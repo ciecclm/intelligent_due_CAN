@@ -68,6 +68,25 @@ void CIntelligent_due_CAN::speedwheel(int temp_velocity,int moto_ID=0)
     outgoing.data.bytes[7]=0x00;
     Can0.sendFrame(outgoing);
 }
+void CIntelligent_due_CAN::setposition(int position,int moto_ID=0)
+{
+    //CAN_FRAME outgoing;
+    outgoing.id = (0x600+driver_ID);
+    outgoing.extended = false;
+    outgoing.length=8;
+    outgoing.priority = 4; //0-15 lower is higher priority
+    outgoing.data.high=0x00;
+    outgoing.data.low=0x00;
+    outgoing.data.bytes[0]=0x23;
+    outgoing.data.bytes[1]=0x01;
+    outgoing.data.bytes[2]=0x20;
+    outgoing.data.bytes[3]=moto_ID&0xff;
+    outgoing.data.bytes[4]=(position>>24)&0xff;
+    outgoing.data.bytes[5]=(position>>16)&0xff;
+    outgoing.data.bytes[6]=(position>>8)&0xff;
+    outgoing.data.bytes[7]=(position)&0xff;
+    Can0.sendFrame(outgoing);
+}
 void CIntelligent_due_CAN::initdriver(int baud=CAN_BPS_1000K,int drv_ID=1,int mode=3)
 {
     Can0.begin(baud);

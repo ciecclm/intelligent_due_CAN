@@ -30,5 +30,6 @@ public:
     
     //void speedwheel(int temp_velocity,int group,int number);
     void speedwheel(int temp_velocity,int drv_ID);
+    void setposition(int position,int moto_ID=0);
     void testwheel();
 };
