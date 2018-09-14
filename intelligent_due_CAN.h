@@ -32,5 +32,5 @@ public:
     void speedwheel(int temp_velocity,int drv_ID);
     void setposition(int position,int moto_ID);
     void setpositionspeed(int speed,int moto_ID);
-    void testwheel();
+    void testwheel(int moto_ID);
 };
