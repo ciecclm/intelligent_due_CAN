@@ -115,7 +115,7 @@ void CIntelligent_due_CAN::initdriver(int baud=CAN_BPS_1000K,int drv_ID=1,int mo
     resetdriver(drv_ID);
     //setmode(group,drv_ID,mode);
 }
-void CIntelligent_due_CAN::testwheel()
+void CIntelligent_due_CAN::testwheel(int moto_ID=0)
 {
     outgoing.id = 0x600+driver_ID;
     outgoing.extended = false;
@@ -126,7 +126,7 @@ void CIntelligent_due_CAN::testwheel()
     outgoing.data.bytes[0]=0x23;
     outgoing.data.bytes[1]=0x00;
     outgoing.data.bytes[2]=0x20;
-    outgoing.data.bytes[3]=0x02;
+    outgoing.data.bytes[3]=moto_ID&0xff;
     outgoing.data.bytes[4]=0xf4;
     outgoing.data.bytes[5]=0x01;
     outgoing.data.bytes[6]=0x00;
