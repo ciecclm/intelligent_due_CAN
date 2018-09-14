@@ -10,7 +10,7 @@
 CIntelligent_due_CAN::CIntelligent_due_CAN()
 {
    driver_group=0;
-   driver_number=0;
+  // driver_number=0;
    driver_mode=3;
 }
 
