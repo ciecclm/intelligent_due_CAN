@@ -64,8 +64,8 @@ void CIntelligent_due_CAN::speedwheel(int temp_velocity,int moto_ID=0)
     outgoing.data.bytes[1]=0x00;
     outgoing.data.bytes[2]=0x20;
     outgoing.data.bytes[3]=moto_ID&0xff;
-    outgoing.data.bytes[4]=(temp_velocity>>8)&0xff;
-    outgoing.data.bytes[5]=(temp_velocity)&0xff;
+    outgoing.data.bytes[4]=(temp_velocity)&0xff;
+    outgoing.data.bytes[5]=(temp_velocity>>)&0xff;
     outgoing.data.bytes[6]=0x00;
     outgoing.data.bytes[7]=0x00;
     Can0.sendFrame(outgoing);
