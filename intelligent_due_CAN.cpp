@@ -146,7 +146,7 @@ void CIntelligent_due_CAN::setpositionspeed(int speed,int moto_ID=0)
     outgoing.data.bytes[7]=(speed>>24)&0xff;
     Can0.sendFrame(outgoing);
 }
-void CIntelligent_due_CAN::setpositionspeed(int speed,int drv_ID，int moto_ID=0)
+void CIntelligent_due_CAN::setpositionspeed(int speed,int drv_ID,int moto_ID=0)
 {
     //CAN_FRAME outgoing;
     outgoing.id = (0x600+drv_ID);
