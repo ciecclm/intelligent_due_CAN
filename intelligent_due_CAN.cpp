@@ -70,7 +70,7 @@ void CIntelligent_due_CAN::speedwheel(int temp_velocity,int moto_ID=0)
     outgoing.data.bytes[7]=0x00;
     Can0.sendFrame(outgoing);
 }
-void CIntelligent_due_CAN::speedwheel(int temp_velocity,int drv_ID，int moto_ID=0)
+void CIntelligent_due_CAN::speedwheel(int temp_velocity,int drv_ID,int moto_ID=0)
 {
     //CAN_FRAME outgoing;
     outgoing.id = (0x600+drv_ID);
@@ -108,7 +108,7 @@ void CIntelligent_due_CAN::setposition(int position,int moto_ID=0)
     outgoing.data.bytes[7]=(position>>24)&0xff;
     Can0.sendFrame(outgoing);
 }
-void CIntelligent_due_CAN::setposition(int position,int drv_ID，int moto_ID=0)
+void CIntelligent_due_CAN::setposition(int position,int drv_ID,int moto_ID=0)
 {
     //CAN_FRAME outgoing;
     outgoing.id = (0x600+drv_ID);
@@ -199,7 +199,7 @@ void CIntelligent_due_CAN::testwheel(int moto_ID=0)
     Can0.sendFrame(outgoing);
     
 }
-void CIntelligent_due_CAN::testwheel(int drv_ID，int moto_ID=0)
+void CIntelligent_due_CAN::testwheel(int drv_ID,int moto_ID=0)
 {
     outgoing.id = 0x600+drv_ID;
     outgoing.extended = false;
