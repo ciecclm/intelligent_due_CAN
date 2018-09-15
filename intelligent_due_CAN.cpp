@@ -199,7 +199,7 @@ void CIntelligent_due_CAN::testwheel(int moto_ID=0)
     Can0.sendFrame(outgoing);
     
 }
-void CIntelligent_due_CAN::testwheel(int drv_ID,int moto_ID=0)
+void CIntelligent_due_CAN::testwheel(int drv_ID,int moto_ID)
 {
     outgoing.id = 0x600+drv_ID;
     outgoing.extended = false;
