@@ -214,15 +214,7 @@ void CIntelligent_due_CAN::testwheel(int drv_ID，int moto_ID=0)
     outgoing.data.bytes[4]=0xf4;
     outgoing.data.bytes[5]=0x01;
     outgoing.data.bytes[6]=0x00;
-    outgoing.data.bytes[7]=0x00;/*
-                                 outgoing.data.bytes[7]=0x23;
-                                 outgoing.data.bytes[6]=0x00;
-                                 outgoing.data.bytes[5]=0x20;
-                                 outgoing.data.bytes[4]=0x01;
-                                 outgoing.data.bytes[3]=0xf4;
-                                 outgoing.data.bytes[2]=0x01;
-                                 outgoing.data.bytes[1]=0x00;
-                                 outgoing.data.bytes[0]=0x00;*/
+    outgoing.data.bytes[7]=0x00;
     Can0.sendFrame(outgoing);
     
 }
