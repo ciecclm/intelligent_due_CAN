@@ -29,8 +29,12 @@ public:
     void initdriver(int baud,int drv_ID,int mode);
     
     //void speedwheel(int temp_velocity,int group,int number);
-    void speedwheel(int temp_velocity,int drv_ID);
+    void speedwheel(int temp_velocity,int moto_ID);
+    void speedwheel(int temp_velocity,int drv_ID，int moto_ID);
     void setposition(int position,int moto_ID);
+    void setposition(int position,int drv_ID，int moto_ID);
     void setpositionspeed(int speed,int moto_ID);
+    void setpositionspeed(int speed,int drv_ID，int moto_ID);
     void testwheel(int moto_ID);
+    void testwheel(int drv_ID，int moto_ID);
 };
